@@ -1,0 +1,1 @@
+# omniauth-slack-oauth2
