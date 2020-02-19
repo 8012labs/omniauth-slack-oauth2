@@ -11,11 +11,11 @@ class ClientTest < StrategyTestCase
   end
 
   test "has correct authorize url" do
-    assert_equal "https://slack.com/oauth/v2/authorize", strategy.client.options[:authorize_url]
+    assert_equal "/oauth/v2/authorize", strategy.client.options[:authorize_url]
   end
 
   test "has correct token url" do
-    assert_equal "/api/oauth.access", strategy.client.options[:token_url]
+    assert_equal "/api/oauth.v2.access", strategy.client.options[:token_url]
   end
 end
 
