@@ -12,8 +12,10 @@ module OmniAuth
       option :client_options, {
         site: 'https://slack.com',
         token_url: '/api/oauth.access',
-        auth_scheme: :basic_auth
+        auth_scheme: :basic_auth,
+        authorize_url: "https://slack.com/oauth/v2/authorize"
       }
+
 
       option :pass_through_params, ['team']
 
@@ -100,8 +102,6 @@ module OmniAuth
         return {} unless access_token.params.key? 'bot'
         access_token.params['bot']
       end
-
-      private
 
       def callback_url
         full_host + script_name + callback_path
